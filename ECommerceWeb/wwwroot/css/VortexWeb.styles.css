@@ -1,0 +1,143 @@
+﻿
+
+footer.text-center.text-lg-start.bg-primary.mt-5 {
+    background-color: #FFC107 !important; /* Fondo amarillo */
+    color: black !important; /* Texto en negro */
+    padding-top: 20px;
+}
+
+footer .border-bottom {
+    border-bottom: 2px solid black !important; /* Línea divisoria en negro */
+    margin-bottom: 20px;
+}
+
+footer a {
+    color: black !important; /* Enlaces en negro */
+    font-weight: bold; /* Texto en negrita */
+    text-decoration: none;
+}
+
+    footer a:hover {
+        color: #333 !important; /* Enlaces más oscuros al pasar el ratón */
+        text-decoration: underline; /* Subrayado al pasar el ratón */
+    }
+
+footer h6 {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+footer .fa {
+    margin-right: 8px;
+}
+
+footer .text-center.p-4 {
+    background-color: rgba(0, 0, 0, 0.1); /* Fondo gris claro */
+    color: black !important;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-top: 2px solid black;
+}
+
+
+
+
+/* Estilos para la navbar */
+.navbar {
+    background-color: #FFC107 !important; /* Amarillo-anaranjado */
+}
+
+    /* Color del texto del logo en negro */
+    .navbar .navbar-brand {
+        color: #000 !important; /* Texto negro */
+        font-weight: bold;
+    }
+
+        .navbar .navbar-brand:hover {
+            color: #333 !important; /* Color más oscuro al pasar el cursor */
+        }
+
+    /* Nav Links en negro */
+    .navbar .nav-link {
+        color: #000 !important; /* Texto negro */
+    }
+
+        .navbar .nav-link:hover {
+            color: #333 !important; /* Color más oscuro al pasar el cursor */
+        }
+
+    /* Botón de búsqueda en negro */
+    .navbar .btn-outline-light {
+        color: #000 !important; /* Color del texto en negro */
+        border-color: #000 !important; /* Borde negro */
+    }
+
+        .navbar .btn-outline-light:hover {
+            color: #333 !important; /* Color más oscuro en hover */
+            background-color: #FFD54F !important; /* Fondo claro al pasar el cursor */
+            border-color: #333 !important; /* Borde más oscuro */
+        }
+
+        /* Estilos para el icono de búsqueda */
+        .navbar .btn-outline-light .fas.fa-search {
+            color: #000 !important; /* Asegura que el icono de la lupa esté en negro */
+        }
+
+    /* Estilo para el enlace de Cerrar sesión en negro */
+    .navbar .nav-item a {
+        color: #000 !important; /* Color del texto de los enlaces en negro */
+    }
+
+        .navbar .nav-item a:hover {
+            color: #333 !important; /* Color más oscuro en hover */
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Estilos de las tarjetas */
+.card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .card:hover {
+        background-color: #f5f5f5; /* Fondo gris claro al pasar el ratón */
+        transform: translateY(-5px); /* Efecto de elevación */
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Sombra más profunda */
+    }
+
+.card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+}
+
+    .card-body .btn {
+        color: black;
+        background-color: #FFC107; /* Amarillo-anaranjado */
+        border-color: black;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Sombra negra suave */
+        margin-top: auto;
+        transition: background-color 0.3s ease;
+    }
+
+        .card-body .btn:hover {
+            background-color: #FFD54F; /* Color más claro en el botón al pasar el ratón */
+        }

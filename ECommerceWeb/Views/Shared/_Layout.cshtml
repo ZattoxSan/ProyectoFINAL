@@ -1,0 +1,128 @@
+﻿@using ECommerceWeb.Utility;
+@using ECommerceWeb.DataAccess.Repository.Interfaces;
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor;
+@inject IUnitOfWork UnitOfWork
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nutri Supplements.FT</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.webp">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.2.3/united/bootstrap.min.css" />
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.27.3/ui/trumbowyg.min.css">
+    <script src="https://kit.fontawesome.com/4cd363c8ba.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="~/css/VortexWeb.styles.css" asp-append-version="true" />
+
+    <script src="~/js/lecturaContenido.js"></script>
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary p-3">
+
+
+        <div class="dropdown" style="position: fixed; top: 70px; right: 20px; z-index: 1000;">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="accessibilityMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                Accesibilidad
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="accessibilityMenu">
+                <li><a class="dropdown-item" href="#" id="toggleVoice">Activar Voz</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#" id="toggleColorblind">Modo Daltonismo</a></li>
+                <li><a class="dropdown-item" href="#" id="toggleDarkMode">Activar Modo Oscuro</a></li>
+                <li><a class="dropdown-item" href="#" id="toggleHighContrast">Activar Alto Contraste</a></li>
+                <li><a class="dropdown-item" href="#" id="toggleTextSpacing">Activar Espaciado de Texto</a></li>
+                <li><a class="dropdown-item" href="#" id="toggleTextMagnification">Activar Magnificación de Texto</a></li>
+            </ul>
+        </div>
+
+
+
+
+        <div class="container-fluid">
+            <a class="lectura navbar-brand" asp-area="Cliente" asp-controller="Home" asp-action="Index"><i class="fa-solid fa-store"></i> Nutri Supplements.FT</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item mx-1">
+                        <a class="lectura nav-link" asp-area="Cliente" asp-controller="Carrito" asp-action="Index" aria-label="Carrito de compras">
+                         
+                            <span aria-hidden="true">
+                                @await Component.InvokeAsync("CarroCompras")
+                                Carrito de compras
+                            </span>
+                            
+                        </a>
+                    </li>
+
+
+                    <li class="nav-item mx-1">
+                        <a class="lectura nav-link" asp-area="Admin" asp-controller="Pedidos" asp-action="Index">Gestionar Pedidos</a>
+                    </li>
+                    <div class="lectura">
+                        @await Component.InvokeAsync("Categorias")
+                    </div>
+
+                    @if (User.IsInRole(SD.RolAdmin))
+                    {
+                        <li class="nav-item dropdown">
+                            <a class="lectura nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Gestion de contenido
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="lectura dropdown-item" asp-area="Admin" asp-controller="Producto" asp-action="Index">Productos</a></li>
+                                <li><a class="lectura dropdown-item" asp-area="Admin" asp-controller="Categoria" asp-action="Index">Categorias</a></li>
+                                <li><hr class="lectura dropdown-divider"></li>
+                                <li><a class="lectura dropdown-item" asp-area="Identity" asp-page="/Account/Register">Crear Usuario</a></li>
+                                <li><a class="lectura dropdown-item" asp-area="Admin" asp-controller="Usuario" asp-action="Index">Gestionar Usuarios</a></li>
+                                <li><hr class="lectura dropdown-divider"></li>
+                                <li><a class="lectura dropdown-item" asp-area="Admin" asp-controller="Disenio" asp-action="CarouselIndex">Gestionar Carousel</a></li>
+                            </ul>
+                        </li>
+                    }
+
+
+
+                  
+
+
+
+
+
+                    <form method="get" class="d-flex nav-item justify-content-center" asp-action="Buscar" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Buscar" name="producto" aria-label="Search">
+                        <button class="btn btn-outline-light px-3" type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </ul>
+                <partial name="_LoginPartial"></partial>
+            </div>
+        </div>
+
+
+    </nav>
+
+
+    <main role="main">
+        @RenderBody()
+    </main>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+    <script src="~/js/layout.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.27.3/trumbowyg.min.js"></script>
+    
+    <partial name="_Notificaciones" />
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

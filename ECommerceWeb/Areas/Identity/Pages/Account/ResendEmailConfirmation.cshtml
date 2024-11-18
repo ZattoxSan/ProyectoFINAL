@@ -1,0 +1,30 @@
+﻿@page
+@model ResendEmailConfirmationModel
+
+<div class="container-md mt-3">
+    <div class="card">
+        <div class="card-header">
+            <h1>Reenviar correo de confirmación</h1>
+            <h2>Ingrese su correo</h2>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-4">
+                    <form method="post">
+                        <div asp-validation-summary="All" class="text-danger" role="alert"></div>
+                        <div class="form-floating mb-3">
+                            <input asp-for="Input.Email" class="form-control" aria-required="true" placeholder="name@example.com" />
+                            <label asp-for="Input.Email" class="form-label">Correo</label>
+                            <span asp-validation-for="Input.Email" class="text-danger"></span>
+                        </div>
+                        <button type="submit" class="w-100 btn btn-lg btn-primary">Reenviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
